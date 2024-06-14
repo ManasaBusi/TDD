@@ -7,6 +7,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeskBooker.Core", "DeskBook
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeskBooker.Core.Tests", "..\DeskBooker.Core.Tests\DeskBooker.Core.Tests.csproj", "{5FAC8B06-A7E9-4FD2-8E9D-078E6E555003}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeskBooker.DataAccess", "..\DeskBooker.DataAccess\DeskBooker.DataAccess.csproj", "{82D2C63F-97A2-4F48-A6B2-0A8263F14E14}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeskBooker.DataAccess.Tests", "..\DeskBooker.DataAccess.Tests\DeskBooker.DataAccess.Tests.csproj", "{4D21552D-07D0-4B05-926D-E3B5BF1DE309}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeskBooker.Web", "..\DeskBooker.Web\DeskBooker.Web.csproj", "{E510ED7B-51A1-4927-BFA7-3CF763C57875}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeskBooker.Web.Tests", "..\DeskBooker.Web.Tests\DeskBooker.Web.Tests.csproj", "{76A55EE8-6643-4474-B305-A834F5CD8E1E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +29,22 @@ Global
 		{5FAC8B06-A7E9-4FD2-8E9D-078E6E555003}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FAC8B06-A7E9-4FD2-8E9D-078E6E555003}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FAC8B06-A7E9-4FD2-8E9D-078E6E555003}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82D2C63F-97A2-4F48-A6B2-0A8263F14E14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82D2C63F-97A2-4F48-A6B2-0A8263F14E14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82D2C63F-97A2-4F48-A6B2-0A8263F14E14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82D2C63F-97A2-4F48-A6B2-0A8263F14E14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D21552D-07D0-4B05-926D-E3B5BF1DE309}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D21552D-07D0-4B05-926D-E3B5BF1DE309}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D21552D-07D0-4B05-926D-E3B5BF1DE309}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D21552D-07D0-4B05-926D-E3B5BF1DE309}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E510ED7B-51A1-4927-BFA7-3CF763C57875}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E510ED7B-51A1-4927-BFA7-3CF763C57875}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E510ED7B-51A1-4927-BFA7-3CF763C57875}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E510ED7B-51A1-4927-BFA7-3CF763C57875}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76A55EE8-6643-4474-B305-A834F5CD8E1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76A55EE8-6643-4474-B305-A834F5CD8E1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76A55EE8-6643-4474-B305-A834F5CD8E1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76A55EE8-6643-4474-B305-A834F5CD8E1E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

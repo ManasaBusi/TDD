@@ -1,16 +1,17 @@
-﻿
-using DeskBooker.Core.DataInterface;
+﻿using DeskBooker.Core.DataInterface;
 using DeskBooker.Core.Domain;
 
-namespace DeskBooker.Core.Domain
+namespace DeskBooker.Core.Processor
 {
     public class DeskBookingRequestProcessor
     {
         private readonly IDeskBookingRepository _deskBookingRepository;
+        private readonly IDeskRepository _deskRepository;
 
-        public DeskBookingRequestProcessor(IDeskBookingRepository deskBookingRepository)
+        public DeskBookingRequestProcessor(IDeskBookingRepository deskBookingRepository, IDeskRepository deskRepository)
         {
             _deskBookingRepository = deskBookingRepository;
+            _deskRepository = deskRepository;
         }
 
         public DeskBookingResult BookDesk(DeskBookingRequest request)
@@ -20,12 +21,31 @@ namespace DeskBooker.Core.Domain
                 throw new ArgumentNullException(nameof(request));
             }
 
-            _deskBookingRepository.Save(Create<DeskBooking>(request));
+            var result = Create<DeskBookingResult>(request);
 
-            return Create<DeskBookingResult>(request);
+            var avaialbleDesks = _deskRepository.GetAvailableDesks(request.Date);
 
+            if (avaialbleDesks.FirstOrDefault() is Desk availableDesk)
+            {
+                //var availableDesk = avaialbleDesks.First();
+
+                var deskBooking = Create<DeskBooking>(request);
+
+                deskBooking.DeskId = availableDesk.Id;
+
+                _deskBookingRepository.Save(deskBooking);
+
+                result.Code = DeskBookingResultCode.Success;
+                result.DeskBookingId = deskBooking.Id;
+            }
+
+            else
+            {
+                result.Code = DeskBookingResultCode.NoDeskAvailable;
+            }
+
+            return result;
         }
-
         private static T Create<T>(DeskBookingRequest request) where T : DeskBoookingBase, new()
         {
             return new T
@@ -36,5 +56,7 @@ namespace DeskBooker.Core.Domain
                 Date = request.Date
             };
         }
+
     }
+
 }
